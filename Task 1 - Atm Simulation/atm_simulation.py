@@ -24,7 +24,7 @@ class ATM:
         """
         Displays the current balance and log the transaction.
         """
-        print(f"Your current balance is: ${self.balance:.2f}")
+        print(f"Your current balance is: Rs. {self.balance:.2f}")
         self.transaction_history.append("Balance Inquiry")
 
     def deposit(self, amount):
@@ -34,7 +34,7 @@ class ATM:
         """
         if amount > 0:
             self.balance += amount
-            print(f"${amount:.2f} deposited successfully.")
+            print(f"Rs.{amount:.2f} deposited successfully.")
             self.transaction_history.append(f"Deposited Rs. {amount:.2f}")
         else:
             print("Invalid deposit amount.")
@@ -47,7 +47,7 @@ class ATM:
         if amount > 0:
             if amount <= self.balance:
                 self.balance -= amount
-                print(f"${amount:.2f} withdrawn successfully.")
+                print(f"Rs.{amount:.2f} withdrawn successfully.")
                 self.transaction_history.append(f"Withdrew Rs. {amount:.2f}")
             else:
                 print("Insufficient funds.")
@@ -73,7 +73,7 @@ class ATM:
             print(transaction)
 
 def main():
-    # Initialize the ATM with a default balance of $500
+    # Initialize the ATM with a default balance of Rs. 500
     atm = ATM(initial_balance=500)  
     authenticated = False
     
